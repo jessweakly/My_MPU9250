@@ -5,19 +5,20 @@ Adaption of the existing SparkFunMiniMoto driver for use on ARM board
 **/
 
 
-#ifndef ARM_MiniMoto_h
-#define ARM_MiniMoto_h
+#ifndef My_MPU9250_h
+#define My_MPU9250_h
 
 #include <Arduino.h>
 #include <Wire.h>
 
-class MiniMoto
+class MPU9250
 {
 	public:
-		MiniMoto(byte addr);
-		void drive(int speed);
-		void stop();
-		void brake();
+		MPU9250(byte addr);
+		void initMPU();
+		void recordAccel();
+		void recordGyro();
+    void recordMag();
 	private:
 		void I2CWrite(byte reg, byte regValue);
     byte _addr;
