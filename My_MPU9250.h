@@ -16,8 +16,8 @@ class MPU9250
 	public:
 		MPU9250(byte addr);
 		void initMPU();
-		void recordAccel();
-		void recordGyro();
+		void recordAccel(float&, float&, float&);
+		void recordGyro(float&, float&, float&);
     void recordMag();
 	private:
 		void I2CWrite(byte reg, byte regValue);
